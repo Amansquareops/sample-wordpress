@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Running Pre-Build script...
+  build:
+    commands:
+      - mv wp-config-sample.php wp-config.php
+  post_build:
+    commands:
+      - echo Build completed on `date`    
+      
+      
+artifacts:
+  files:
+    - "**/*"
