@@ -1,4 +1,11 @@
 version: 0.2
+env:
+  parameter-store:
+    DB_NAME: "/MY/DBNAME"
+    DB_USER: "/MY/DBUSER"
+    DB_PASSWORD: "/MY/DBPASSWORD"
+    DB_HOST: "DBHOST"
+
 
 phases:
   pre_build:

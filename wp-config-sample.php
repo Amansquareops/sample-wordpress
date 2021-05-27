@@ -12,24 +12,24 @@
  * * Secret keys
  * * Database table prefix
  * * ABSPATH
- *@
+ *
  * @link https://wordpress.org/support/article/editing-wp-config-php/
  *
  * @package WordPress
  */
-//define(‘RELOCATE’,true);
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'database_name_here' );
+define( 'DB_NAME', '$DBNAME') );
 
 /** MySQL database username */
-define( 'DB_USER', 'username_here' );
+define( 'DB_USER', '$DBUSER');
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'password_here' );
+define( 'DB_PASSWORD', '$DBPASSWORD' );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', '$DBHOST' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
@@ -46,18 +46,17 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'put your unique phrase here' );
-define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
-define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
-define( 'NONCE_KEY',        'put your unique phrase here' );
-define( 'AUTH_SALT',        'put your unique phrase here' );
-define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
-define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
-define( 'NONCE_SALT',       'put your unique phrase here' );
-//define('FORCE_SSL_ADMIN', true);
+define( 'AUTH_KEY',         'S[Pg+dAt#806`vQ@RLH*w&-(e!uFg5e}}G7.cY5+B<RFVQ}|m7;:uLw[mhpIue,!' );
+define( 'SECURE_AUTH_KEY',  'B(*D:-+YmR/ -A4.t&+Lbg+^BqBV20Tbd0:o.SO}cm&[l_]k:w%te:e*Bt,tR)>z' );
+define( 'LOGGED_IN_KEY',    'Z4iSH<[J7u3 H`nUU?&<l,@ikRaMH(opT ^M.QU6reB__59B2^!H|M5aTT,@hj6N' );
+define( 'NONCE_KEY',        ' &i}j.4jZK]|uHand.+J*>rfKPqB?w5W7L/LDS@^+%y2Zs#0JI8B,PD4=Yt-_:Lm' );
+define( 'AUTH_SALT',        '<8Ct1^Q[!=Dr>>s|-lgSN@^r|Xp8rH_h{ 34-SsmCh& HM:~r:?,V|lx78<Xd]EM' );
+define( 'SECURE_AUTH_SALT', 'pX7%yW7CSA.o`D4 X[u!0+q-WVJ]dI?blZ.F{o;9 Ap+XjGT.eD 2h)Rd -U HSz');
+define( 'LOGGED_IN_SALT',   '|7M>%etO{_PAcXD&|5xus<0m(=nh9-P7!jXs8dt`>3oxUljvc-#@UF8O7K*/,V:q' );
+define( 'NONCE_SALT',       '<P4|]HyAz%0JAPQ2)S/T%|L~UTm-1L(//lOPnx_s6XD;/+-dV ~$N|_9+>3.|I1%' );
 
-if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
-   $_SERVER['HTTPS']='on';
+#if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
+#   $_SERVER['HTTPS']='on';
 
 /**#@-*/
 
@@ -70,7 +69,7 @@ if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
 $table_prefix = 'wp_';
 
 /**
- * For developers: WordPress debugging mode..
+ * For developers: WordPress debugging mode.
  *
  * Change this to true to enable the display of notices during development.
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
@@ -82,8 +81,6 @@ $table_prefix = 'wp_';
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
 define( 'WP_DEBUG', false );
-//define('WP_HOME','https://wordpress-test.squareops.xyz');
-//define('WP_SITEURL','https://wordpress-test.squareops.xyz');
 
 /* That's all, stop editing! Happy publishing. */
 
@@ -91,8 +88,6 @@ define( 'WP_DEBUG', false );
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', __DIR__ . '/' );
 }
-define('WP_SITEURL', 'https://' . $_SERVER['HTTP_HOST']);
-define('WP_HOME', 'https://' . $_SERVER['HTTP_HOST']);
+
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
-
