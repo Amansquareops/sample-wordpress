@@ -4,7 +4,7 @@ env:
     DB_NAME: "/MY/DBNAME"
     DB_USER: "/MY/DBUSER"
     DB_PASSWORD: "/MY/DBPASSWORD"
-    DB_HOST: "DBHOST"
+    DB_HOST: "/MY/DBHOST"
 
 
 phases:
@@ -14,9 +14,13 @@ phases:
   build:
     commands:
       - mv wp-config-sample.php wp-config.php
+      - sed -i 's|DBNAME|'$DB_NAME'|' wp-config.php
+      - sed -i 's|DBUSER|'$DB_USER'|' wp-config.php
+      - sed -i 's|DBPASSWORD|'$DB_PASSWORD'|' wp-config.php
+      - sed -i 's|DBHOST|'$DB_HOST'|' wp-config.php
   post_build:
     commands:
-      - echo Build completed on `date`    
+      - echo Build completed on  
       
       
 artifacts:
