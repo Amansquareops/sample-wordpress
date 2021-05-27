@@ -55,8 +55,8 @@ define( 'SECURE_AUTH_SALT', 'pX7%yW7CSA.o`D4 X[u!0+q-WVJ]dI?blZ.F{o;9 Ap+XjGT.eD
 define( 'LOGGED_IN_SALT',   '|7M>%etO{_PAcXD&|5xus<0m(=nh9-P7!jXs8dt`>3oxUljvc-#@UF8O7K*/,V:q' );
 define( 'NONCE_SALT',       '<P4|]HyAz%0JAPQ2)S/T%|L~UTm-1L(//lOPnx_s6XD;/+-dV ~$N|_9+>3.|I1%' );
 
-#if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
-#   $_SERVER['HTTPS']='on';
+if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
+   $_SERVER['HTTPS']='on';
 
 /**#@-*/
 
