@@ -8,9 +8,6 @@ env:
 
 
 phases:
-  pre_build:
-    commands:
-      - echo Running Pre-Build script...
   build:
     commands:
       - mv wp-config-sample.php wp-config.php
@@ -18,11 +15,8 @@ phases:
       - sed -i 's|DBUSER|'$DB_USER'|' wp-config.php
       - sed -i 's|DBPASSWORD|'$DB_PASSWORD'|' wp-config.php
       - sed -i 's|DBHOST|'$DB_HOST'|' wp-config.php
-  post_build:
-    commands:
-      - echo Build completed on  
       
-      
+    
 artifacts:
   files:
     - "**/*"
