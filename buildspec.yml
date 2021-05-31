@@ -10,7 +10,6 @@ env:
 phases:
   build:
     commands:
-      - mv wp-config-sample.php wp-config.php
       - sed -i 's|DBNAME|'$DB_NAME'|' wp-config.php
       - sed -i 's|DBUSER|'$DB_USER'|' wp-config.php
       - sed -i 's|DBPASSWORD|'$DB_PASSWORD'|' wp-config.php
