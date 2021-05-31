@@ -10,10 +10,10 @@ env:
 phases:
   build:
     commands:
-      - sed -i 's|DBNAME|'$DB_NAME'|' wp-config.php
-      - sed -i 's|DBUSER|'$DB_USER'|' wp-config.php
-      - sed -i 's|DBPASSWORD|'$DB_PASSWORD'|' wp-config.php
-      - sed -i 's|DBHOST|'$DB_HOST'|' wp-config.php
+      - sed -i 's|DBNAME|'$DB_NAME'|' wp-config-sample.php
+      - sed -i 's|DBUSER|'$DB_USER'|' wp-config-sample.php
+      - sed -i 's|DBPASSWORD|'$DB_PASSWORD'|' wp-config-sample.php
+      - sed -i 's|DBHOST|'$DB_HOST'|' wp-config-sample.php
       
     
 artifacts:
